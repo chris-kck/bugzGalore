@@ -4,21 +4,13 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.1",
-<<<<<<< HEAD
-=======
-    "@tailwindcss/postcss7-compat": "^2.0.4",
->>>>>>> 179ff254f6547cda90c8a2a6a6cc66a2acb53190
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
-    "autoprefixer": "^9.8.6",
-    "node": "^15.10.0",
-    "postcss": "^7.0.35",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
