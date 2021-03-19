@@ -4,14 +4,13 @@ import "./App.css";
 import LogIn from "./LogIn"
 import SignUp from "./SignUp"
 import Landing from "./Landing"
-import Footer from "./Footer"
 
 function App() {
   return (
     <div>
     
-    <SignUp/>
-    <Footer/>
+    <Landing/>
+    
     </div>
   );
 }
