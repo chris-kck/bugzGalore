@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import dbData from "../assets/db";
 import logo from "./market.jpg";
 import Card from "./MarketCard";
 
 function Landing() {
+  const data = dbData;
+
   return (
     <div>
       <img src={logo} />
@@ -43,10 +47,17 @@ function Landing() {
             />
           </svg>
         </button>
-
-        <Card />
-        <Card />
-        <Card />
+        {data.MarketOwners.map((market) => (
+          <Link to={`market/${market.id}`}>
+            <Card
+              marketName={market.marketName}
+              location={market.location}
+              distance={(Math.random() * 5).toFixed(2)}
+              image={market.image}
+              key={market.id}
+            />
+          </Link>
+        ))}
       </div>
     </div>
   );
