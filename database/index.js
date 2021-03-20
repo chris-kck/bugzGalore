@@ -11,7 +11,7 @@ var pg = require('pg');
     const user = process.env.DB_USER || 'postgres';
     const host = process.env.DB_HOST || 'localhost';
     const database = process.env.DB_NAME || 'postgres';
-    const password = 'postgres' || process.env.DB_PWD;
+    const password = process.env.DB_PWD || 'postgres';
     const port = 5432 || +process.env.DB_PORT;
 
     const sequelize = new Sequelize(database, user, password, {
@@ -23,7 +23,7 @@ var pg = require('pg');
     })
 
     try {
-        sequelize.authenticate().then().catch();
+        sequelize.authenticate().then().catch((e)=>{console.log(e)});
         console.log('Connection has been established successfully.');
     } catch (error) {
         console.error('Unable to connect to the database:', error);
