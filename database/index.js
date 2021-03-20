@@ -19,7 +19,11 @@ var pg = require('pg');
         port,
         dialect: 'postgres',
         logging: false,
-        ssl: true,
+        protocol: 'postgres',
+        dialectOptions: {
+            ssl: true
+        }
+
     })
 
     try {
