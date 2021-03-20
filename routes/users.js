@@ -9,4 +9,10 @@ router.get('/', async function(req, res, next) {
 
 });
 
+router.post('/', async function(req, res, next) {
+  console.log(results);
+  res.json({request_data:`${req.body}`, data_created:"no"});
+
+});
+
 module.exports = router;
