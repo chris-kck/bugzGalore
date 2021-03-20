@@ -21,7 +21,8 @@ var pg = require('pg');
         logging: false,
         protocol: 'postgres',
         dialectOptions: {
-            ssl: true
+            ssl: true,
+            rejectUnauthorized: false
         }
 
     })
