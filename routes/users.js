@@ -20,7 +20,7 @@ router.post('/:data', async function(req, res, next) {
   else if (req.params.data=="market"){
   res.json(data.MarketOwners)
   }
-  res.json({request_data:`${req.body}`, data_created:"no"});
+  res.json({request_data:"No matched data", data_created:"no"});
 
 });
 

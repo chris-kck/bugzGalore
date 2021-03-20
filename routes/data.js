@@ -72,4 +72,4 @@ const Stallowners = [
       },
     ];
 
-export {MarketOwners, Stallowners};
+module.exports = {MarketOwners, Stallowners};
