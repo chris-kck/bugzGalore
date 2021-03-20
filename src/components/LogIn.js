@@ -27,6 +27,10 @@ function LogIn() {
         Forgot Password?
       </a>
     </div>
+    <div class="py-0 px-10 h-6 grid gid-col-3 grid-flow-col">
+    <button class="uppercase px-4 py-2 rounded-full bg-purple-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg">Sign In</button>
+    <button class="uppercase px-4 py-2 rounded-full bg-purple-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg">Sign Up</button>
+    </div>
 </div>
     </div>
   )
