@@ -5,7 +5,7 @@ var db = require('../database');
 router.get('/', async function(req, res, next) {
   const results = await db.User.findAll();
   console.log(results);
-  res.send('respond with a resource');
+  res.json({haha:`respond with a resource ${results}`});
 
 });
 

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('User', {
+    const Stall = sequelize.define('Stallowner', {
         // Model attributes are defined here
         id: {
             type: DataTypes.INTEGER,
@@ -20,6 +20,6 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    return User;
+    return Stall;
 
 };

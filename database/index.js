@@ -3,10 +3,9 @@
 
 //Load modules
 var UserModel = require('./user');
+var MarketModel = require('./market');
+var StallModel = require('./stall');
 var Sequelize = require('sequelize');
-var pg = require('pg');
-
-
 
     const user = process.env.DB_USER || 'postgres';
     const host = process.env.DB_HOST || 'localhost';
@@ -40,31 +39,42 @@ var pg = require('pg');
     //await sequelize.sync({ force: true }).then(res=>console.log((res.toString()));
 
 
-
 //db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 const User = UserModel( sequelize, Sequelize);
+    const Market = MarketModel( Sequelize, sequelize, Sequelize);
+const Stall = StallModel( sequelize, Sequelize);
 
 const db = {};
 db.Sequelize= Sequelize;
 db.sequelize = sequelize;
 db.User = User;
+db.Market = Market;
+db.Stall = Stall;
 
 //db.sequelize.sync();
 //drop each time the app restarts
-User.sync({ force: true}).then(() => {
+db.sequelize.sync({ force: true}).then(() => {
     console.log("Drop and re-sync db.");
+    insertdata();
+}).finally(()=>insertdata());
 
-}).then(()=>insertdata(User));
-//insertdata(User);
-//Insert Latest CSV DATA into DB function accepts row object with keys.
-async function insertdata(User){
+//insertdata(User).then((res)=>console.log(res));
 
-    const name = 'Roger';
-    const age = 8;
-    const result = await User.create({ name, age });
+async function insertdata(){
+
+    const username = 'Rogerd';
+    const email = "ee@hjdf.com"
+    const location = "hsfdsd";
+    const marketname = 'marketname';
+    const availablestalls = '5';
+    const yocoaccount = "YOCOaCC";
+    const stalls = {st1:"result", st2:"res2" };
+    const result = await User.create({ username, email, location });
+
+    const result1 = await Market.create({ username, email, marketname, location, availablestalls, yocoaccount, stalls});
 
     const results = await User.findAll()
-    return results;
+    return {results:result, results1: result1, resp: results};
     console.log("Getdata ran");
 }
 
