@@ -3,6 +3,9 @@ import React from "react";
 function StallCard({ image, stallName, description, email }) {
   return (
     <div>
+    <div class="grid justify-items-stretch">
+
+    <div class="justify-self-center">
       <div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
         <img class="w-full" src={image} alt="Sunset in the mountains" />
         <div class="px-6 py-4">
