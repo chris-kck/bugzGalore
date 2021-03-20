@@ -1,5 +1,8 @@
 import React from "react";
 import "./App.css";
+import LogIn from "./LogIn"
+import SignUp from "./SignUp"
+import Landing from "./Landing"
 
 function App() {
   return (
