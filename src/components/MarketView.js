@@ -2,62 +2,31 @@ import logo from "./market.jpg";
 import React from "react";
 import Card from "./MarketCard";
 import Stall from "./Stall";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import StallView from "./StallView";
+import dbData from "../assets/db";
 
 function MarketView() {
-  const data = {
-    stalls: [
-      {
-        id: 0,
-        username: "moonpie",
-        email: "sheldon@tbbt.com",
-        stallName: "Fun with flags",
-        description: "My favourite show now has a merch line. Get yours soon!",
-        products: [
-          {
-            id: "prod-shel-1",
-            productName: "Zimbabwean Flag",
-          },
-          {
-            id: "prod-shel-2",
-            productName: "Kenyan Flag",
-          },
-          {
-            id: "prod-shel-3",
-            productName: "Sourh Africa(the country)",
-          },
-        ],
-      },
-      {
-        id: 1,
-        username: "nicknjess4eva",
-        email: "jess@yahoo.com",
-        stallName: "Jessica Day Tutoring",
-        description:
-          "Your favourite quirky girl is here to help. How old are you again? Doesn't matter, I'll teach you!",
-        products: [
-          {
-            id: "prod-jess-1",
-            productName: "English Tutoring for kids",
-          },
-          {
-            id: "prod-jess-2",
-            productName: "Adult classes in English writing",
-          },
-        ],
-      },
-    ],
-  };
+  const { marketId } = useParams();
+  const markets = dbData;
+
+  const data = markets.MarketOwners[marketId]; // this is a market detail
 
   return (
     <div>
       <img src={logo} />
-      <Card />
+      <Card
+        marketName={data.marketName}
+        location={data.location}
+        distance={(Math.random() * 5).toFixed(2)}
+        image={data.image}
+        key={data.id}
+      />
       <div class="grid grid-cols-2 gap-4">
         {data.stalls.map((stall) => (
           <div className="">
-            <Link to={`/vendor/${stall.id}`} key={stall.id}>
-              <Stall />
+            <Link to={`/${data.id}/${stall.id}`} key={stall.id}>
+              <Stall name={stall.stallName} image={stall.image} />
             </Link>
           </div>
         ))}
