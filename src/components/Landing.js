@@ -55,9 +55,6 @@ function Landing() {
           </div>
         </button>
       </div>
-      <Card />
-        <Card />
-        <Card />
         {data.MarketOwners.map((market) => (
           <Link to={`market/${market.id}`}>
             <Card
