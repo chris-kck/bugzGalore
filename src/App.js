@@ -11,15 +11,28 @@ import StallView from "./components/StallView";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-
-
 function App() {
   return (
-    <div>
-    
-    <StallView/>
-    
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Landing />
+        </Route>
+        <Route path="/sign-up" exact>
+          <SignUp />
+        </Route>
+        <Route path="/sign-in" exact>
+          <LogIn />
+        </Route>
+        <Route path="/market/:id" exact>
+          <MarketView />
+        </Route>
+        <Route path="/vendor/:id" exact>
+          <StallView />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 
