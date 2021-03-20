@@ -10,7 +10,6 @@ router.get('/', async function(req, res, next) {
 });
 
 router.post('/', async function(req, res, next) {
-  console.log(results);
   //const result = await db.Market.create({ username:, email:, marketname:, location:, availablestalls:, yocoaccount:, stalls:});
   res.json({request_data:`${req.body}`, data_created:"no"});
 
