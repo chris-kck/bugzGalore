@@ -9,7 +9,7 @@ function Landing() {
 
   return (
     <div>
-      <img src={logo} />
+      <img class="max-auto" src={logo} />
       <div class="grid justify-items-stretch">
       <div class="justify-self-center grid-cols-6 gap-2 justify-self-center">
         <button class="uppercase px-2 py-2 rounded-full bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg">
@@ -24,10 +24,6 @@ function Landing() {
         <button class="uppercase px-2 py-2 rounded-full bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg">
           DUR
         </button><br/>
-        
-
-        
-      </div>
       </div>
       <br/>
       <div class="grid justify-items-stretch">
