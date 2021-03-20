@@ -72,6 +72,7 @@ async function insertdata(){
     const result = await User.create({ username, email, location });
 
     const result1 = await Market.create({ username, email, marketname, location, availablestalls, yocoaccount, stalls});
+    //const result2 = await Stall.create({ username, email, marketname, location, availablestalls, yocoaccount, stalls});
 
     const results = await User.findAll()
     return {results:result, results1: result1, resp: results};
