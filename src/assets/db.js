@@ -35,7 +35,7 @@ const dbData = {
           ],
         },
         {
-          id: 0,
+          id: 1,
           username: "nicknjess4eva",
           email: "jess@yahoo.com",
           image:
@@ -68,7 +68,7 @@ const dbData = {
       YOCOAccount: "9945962343",
       stalls: [
         {
-          id: 1,
+          id: 0,
           username: "nicknjess4eva",
           email: "jess@yahoo.com",
           image:
@@ -101,14 +101,14 @@ const dbData = {
       YOCOAccount: "9945962343",
       stalls: [
         {
-          id: 1,
+          id: 0,
           username: "nicknjess4eva",
           email: "jess@yahoo.com",
           image:
-              "https://images.unsplash.com/photo-1570169797118-99f5f90c4e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+            "https://images.unsplash.com/photo-1570169797118-99f5f90c4e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
           stallName: "Jessica Day Tutoring",
           description:
-              "Your favourite quirky girl is here to help. How old are you again? Doesn't matter, I'll teach you!",
+            "Your favourite quirky girl is here to help. How old are you again? Doesn't matter, I'll teach you!",
           products: [
             {
               id: "prod-jess-1",
@@ -122,7 +122,7 @@ const dbData = {
         },
       ],
       image:
-          "https://theoldbiscuitmill.co.za/wp-content/uploads/2019/03/neighbourgoods-market-1.jpg",
+        "https://theoldbiscuitmill.co.za/wp-content/uploads/2019/03/neighbourgoods-market-1.jpg",
     },
     {
       id: 3,
@@ -134,14 +134,14 @@ const dbData = {
       YOCOAccount: "9945962343",
       stalls: [
         {
-          id: 1,
+          id: 0,
           username: "nicknjess4eva",
           email: "jess@yahoo.com",
           image:
-              "https://images.unsplash.com/photo-1570169797118-99f5f90c4e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+            "https://images.unsplash.com/photo-1570169797118-99f5f90c4e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
           stallName: "Jessica Day Tutoring",
           description:
-              "Your favourite quirky girl is here to help. How old are you again? Doesn't matter, I'll teach you!",
+            "Your favourite quirky girl is here to help. How old are you again? Doesn't matter, I'll teach you!",
           products: [
             {
               id: "prod-jess-1",
@@ -155,7 +155,7 @@ const dbData = {
         },
       ],
       image:
-          "https://i.pinimg.com/originals/29/a8/4a/29a84a8f11498418ad2a523922f6bd1c.jpg",
+        "https://i.pinimg.com/originals/29/a8/4a/29a84a8f11498418ad2a523922f6bd1c.jpg",
     },
     {
       id: 4,
@@ -167,14 +167,14 @@ const dbData = {
       YOCOAccount: "9945962343",
       stalls: [
         {
-          id: 1,
+          id: 0,
           username: "nicknjess4eva",
           email: "jess@yahoo.com",
           image:
-              "https://images.unsplash.com/photo-1570169797118-99f5f90c4e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+            "https://images.unsplash.com/photo-1570169797118-99f5f90c4e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
           stallName: "Jessica Day Tutoring",
           description:
-              "Your favourite quirky girl is here to help. How old are you again? Doesn't matter, I'll teach you!",
+            "Your favourite quirky girl is here to help. How old are you again? Doesn't matter, I'll teach you!",
           products: [
             {
               id: "prod-jess-1",
@@ -188,7 +188,7 @@ const dbData = {
         },
       ],
       image:
-          "https://www.mojomarket.co.za/wp-content/uploads/2017/01/Mojo-Hotel.jpg",
+        "https://www.mojomarket.co.za/wp-content/uploads/2017/01/Mojo-Hotel.jpg",
     },
   ],
 };

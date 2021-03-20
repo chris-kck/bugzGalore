@@ -25,7 +25,7 @@ function MarketView() {
       <div class="grid grid-cols-2 gap-4">
         {data.stalls.map((stall) => (
           <div className="">
-            <Link to={`/${data.id}/${stall.id}`} key={stall.id}>
+            <Link to={`/market/${data.id}/${stall.id}`} key={stall.id}>
               <Stall name={stall.stallName} image={stall.image} />
             </Link>
           </div>

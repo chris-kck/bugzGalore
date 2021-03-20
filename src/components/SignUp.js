@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "./market.jpg"
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
