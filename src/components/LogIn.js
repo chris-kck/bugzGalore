@@ -41,9 +41,8 @@ function LogIn() {
     <button class="uppercase px-4 py-2 rounded-full bg-purple-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg">Sign In</button>
     <button class="uppercase px-4 py-2 rounded-full bg-purple-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg">Sign Up</button>
     </div>
-</div>
     </div>
-  )
+
       <form action="">
         <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div class="mb-4">
@@ -103,7 +102,9 @@ function LogIn() {
         </div>
       </form>
     </div>
+    
   );
+
 }
 
 export default LogIn;

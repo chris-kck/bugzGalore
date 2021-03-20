@@ -8,7 +8,7 @@ import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import MarketView from "./components/MarketView";
 import StallView from "./components/StallView";
-
+import Booking from "./components/Booking";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -29,6 +29,15 @@ function App() {
         </Route>
         <Route path="/market/:market/:stall" exact>
           <StallView />
+        </Route>
+        <Route path="/booking" exact>
+          <Booking/>
+        </Route>
+        <Route path="/MarketOwner" exact>
+          <Booking/>
+        </Route>
+        <Route path="/ProductOwner" exact>
+          <Booking/>
         </Route>
       </Switch>
       <Footer />
