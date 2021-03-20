@@ -25,6 +25,15 @@ class bugClient{
         }
     }
 
+    async getData(data) {
+        try {
+            const result = await this.client.post(`users/${data}`);
+            return result;
+        } catch (e) {
+            console.log("error" + e);
+        }
+    }
+
 }
 
 const bugClientInstance = new bugClient();
