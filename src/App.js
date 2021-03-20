@@ -25,14 +25,13 @@ function App() {
           <LogIn />
         </Route>
         <Route path="/market/:id" exact>
-          {/* <Market /> */}
+          <MarketView />
         </Route>
         <Route path="/vendor/:id" exact>
-          {/* <Vendor /> */}
+          <StallView />
         </Route>
-
-        <Footer />
       </Switch>
+      <Footer />
     </Router>
   );
 }
