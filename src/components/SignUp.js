@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "./market.jpg"
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
@@ -35,9 +36,13 @@ function SignUp() {
       
     </div>
     <div class="flex items-center justify-between">
+    
+    <Link to="/ProductOwner">
       <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" type="button">
-        Sign In
+        Sign Up
       </button>
+      </Link>
+
       <a class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker" href="#">
         Forgot Password?
       </a>

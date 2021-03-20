@@ -78,16 +78,15 @@ function Booking() {
     </div>
     
     <div class ="flex items-center justify-between">
-      <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" type="button">
+    {/*  */}
+   
+      <button  class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" type="button" onClick={yokoSDK}>
         Book Stall
       </button>
       
      
     </div>
-    <div class="py-0 px-10 h-6 grid gid-col-3 grid-flow-col">
-    <button class="uppercase px-4 py-2 rounded-full bg-purple-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg">Sign In</button>
-    <button class="uppercase px-4 py-2 rounded-full bg-purple-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg">Sign Up</button>
-    </div>
+    
 </div>
     </div>
       
@@ -95,4 +94,42 @@ function Booking() {
   );
 }
 
+const yocoSDK = new window.YocoSDK({
+  publicKey: 'pk_test_ed3c54a6gOol69qa7f45'
+});
+
+//Popup Method
+$('.popup button').click(() => {
+  yocoSDK.showPopup({
+      currency: 'ZAR',
+      amountInCents: 5000,
+      name: 'Varsity Eats Wings Payment',
+      callback: response => {
+          if(response.error){
+              $('.popup p').html(response.error.message);
+          }
+          else{
+              fetch('/pay', {
+                  method: 'post',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ token: response.id })
+              })
+                  .then(res => res.json())
+                  .then(data => {
+                      if(data.errorCode){
+                          $('.popup p').html(data.displayMessage);
+                      }
+                      else{
+                          $('.popup p').html(data.status);
+                      }
+                  })
+                  .catch(error => {
+                      $('.popup p').html(error.message);
+                  })
+          }
+      }
+  })
+})
 export default Booking;
