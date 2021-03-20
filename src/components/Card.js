@@ -5,7 +5,7 @@ import logo from "./market.jpg";
 function Card() {
   return (
     <div>
-      <div class="min-h-screen bg-gray-20 flex justify-center items-center">
+      <div class="m-4 bg-gray-20 flex justify-center items-center">
   
    <div class="max-w-2xl bg-white border-2 border-gray-300 p-5 rounded-md tracking-wide shadow-lg">
       <div id="header" class="flex"> 
