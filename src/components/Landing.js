@@ -6,7 +6,7 @@ function Landing() {
   return (
     <div>
       <img src={logo} />
-      <div class="grid gap-2">
+      <div class="grid-cols-6 gap-2">
         <button class="uppercase px-2 py-2 rounded-full bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg">
           CPT
         </button>
@@ -18,7 +18,7 @@ function Landing() {
         </button>
         <button class="uppercase px-2 py-2 rounded-full bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg">
           DUR
-        </button>
+        </button><br/>
         <button class="uppercase px-2 py-2 rounded-full bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg">
           MYLOCATION
           <svg
