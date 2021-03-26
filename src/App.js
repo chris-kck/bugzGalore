@@ -10,6 +10,8 @@ import MarketView from "./components/MarketView";
 import StallView from "./components/StallView";
 import Booking from "./components/Booking";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MarketOwnerProfile from "./components/MarketOwnerProfile";
+import StallOwnerProfile from "./components/StallOwnerProfile";
 
 function App() {
   return (
@@ -31,13 +33,13 @@ function App() {
           <StallView />
         </Route>
         <Route path="/booking" exact>
-          <Booking/>
+          <Booking />
         </Route>
         <Route path="/MarketOwner" exact>
-          <Booking/>
+          <MarketOwnerProfile />
         </Route>
         <Route path="/ProductOwner" exact>
-          <Booking/>
+          <StallOwnerProfile />
         </Route>
       </Switch>
       <Footer />
