@@ -18,6 +18,7 @@ app.use(express.json());
 // get list of all the markets
 app.get("/markets", async (req, res) => {
   try {
+    console.log(`${req.ip} has requested all the markets`);
     const allMarkets = await client.query("SELECT * FROM current_markets");
     res.json(allMarkets.rows);
   } catch (err) {

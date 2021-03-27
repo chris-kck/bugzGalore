@@ -8,7 +8,8 @@ const client = new Client({
     rejectUnauthorized: false,
   },
 });
-
+console.log("Connecting to database");
 client.connect();
+console.log("Connected!");
 
 module.exports = client;
