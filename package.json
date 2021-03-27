@@ -1,7 +1,7 @@
 {
   "name": "market-man-backend",
   "version": "1.0.0",
-  "description": "The backend server for the Market Man application",
+  "description": "The backend server for the My Market application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,8 +20,11 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
     "nodemon": "^2.0.7",
     "pg": "^8.5.1",
+    "slugify": "^1.5.0",
     "uuid": "^8.3.2"
   }
 }

@@ -8,6 +8,11 @@ firebase-debug.log*
 firebase-debug.*.log*
 *.env
 
+
+# Test files
+test.json
+
+
 # Firebase cache
 .firebase/
 
