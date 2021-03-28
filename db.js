@@ -1,13 +1,13 @@
-const { Client } = require("pg");
+const Pool = require("pg").Pool;
 const dotenv = require("dotenv");
 dotenv.config();
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
+const pool = new Pool({
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_DATABSE_NAME,
 });
-console.log("Connecting to database");
-client.connect();
-console.log("Connected!");
 
-module.exports = client;
+module.exports = pool;

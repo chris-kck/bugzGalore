@@ -15,11 +15,46 @@ app.use(express.json());
 
 // routes
 
+// get list of all the products
+app.get("/products", async (req, res) => {
+  try {
+    const allMarkets = await client.query("SELECT * FROM products");
+    res.json(allMarkets.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+// get specific product
+app.get("/product/:productid", async (req, res) => {
+  try {
+    const { productid } = req.params;
+    const allMarkets = await client.query(
+      "SELECT * FROM products WHERE productid=$1",
+      [productid]
+    );
+    res.json(allMarkets.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
 // get list of all the markets
 app.get("/markets", async (req, res) => {
   try {
     console.log(`${req.ip} has requested all the markets`);
-    const allMarkets = await client.query("SELECT * FROM current_markets");
+    const allMarkets = await client.query("SELECT * FROM markets");
+    res.json(allMarkets.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+// get list of all the markets
+app.get("/vendors", async (req, res) => {
+  try {
+    console.log(`${req.ip} has requested all the vendors`);
+    const allMarkets = await client.query("SELECT * FROM market_vendors");
     res.json(allMarkets.rows);
   } catch (err) {
     console.error(err.message);
@@ -30,10 +65,9 @@ app.get("/markets", async (req, res) => {
 app.get("/market/:market_slug", async (req, res) => {
   try {
     const { market_slug } = req.params;
-    const market = await client.query(
-      "SELECT * from current_markets WHERE slug = $1",
-      [market_slug]
-    );
+    const market = await client.query("SELECT * from markets WHERE slug = $1", [
+      market_slug,
+    ]);
     res.json(market.rows[0]);
   } catch (err) {
     console.error(err.message);
@@ -48,7 +82,7 @@ app.post("/new_market", async (req, res) => {
       market_name,
       stalls,
       stalls_available,
-      location,
+      market_location,
       market_owner,
       details,
       start_time,
@@ -58,23 +92,43 @@ app.post("/new_market", async (req, res) => {
     const slug = slugify(market_name, { replacement: "_", lower: true });
 
     const newMarket = await client.query(
-      'INSERT INTO public.current_markets (market_id, market_name, stalls, stalls_available, market_owner_id, "location", market_duration, details, start_time, end_time, slug) VALUES($1, $2, $3, $4, $5, $6, $7::daterange, $8, $9, $10, $11)',
+      "INSERT INTO markets (market_id, market_name, stalls, stalls_available, market_owner_id, market_location, market_duration, details, start_time, end_time, slug, active) VALUES($1, $2, $3, $4, $5, $6, $7::daterange, $8, $9, $10, $11,$12)",
       [
         market_id,
         market_name,
         stalls,
         stalls_available,
         market_owner,
-        location,
+        market_location,
         market_duration,
         details,
         start_time,
         end_time,
         slug,
+        true, // Active becuase you can not add a past market
       ]
     );
 
+    console.log("Added market " + market_name);
     res.json(newMarket.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+// add vendor to table
+app.post("/new_vendor", async (req, res) => {
+  try {
+    vendor_id = uuid.v4(); // create the new market id
+    const { username, email, firstname, surname, bio, profileimage } = req.body;
+    // TODO: Double check if username exists
+
+    const newVendor = await client.query(
+      "INSERT INTO market_vendors (vendorid, username, email, profileimage, firstname, surname, bio) VALUES ($1, $2, $3, $4, $5, $6, $7)",
+      [vendor_id, username, email, profileimage, firstname, surname, bio]
+    );
+    console.log("Added a new vendor: " + firstname + " " + surname);
+    res.json(newVendor.rows);
   } catch (err) {
     console.error(err.message);
   }
