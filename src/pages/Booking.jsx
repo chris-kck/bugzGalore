@@ -1,6 +1,7 @@
 import React from "react";
+import logo from "./../assets/market.jpg";
 
-function MarketOwnerProfile() {
+function Booking() {
   return (
     <div>
       <div>
@@ -41,13 +42,13 @@ function MarketOwnerProfile() {
               class="block text-grey-darker text-sm font-bold mb-2"
               for="username"
             >
-              Location
+              Date
             </label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
               id="username"
               type="text"
-              placeholder="Location"
+              placeholder="Date"
             />
           </div>
 
@@ -56,36 +57,14 @@ function MarketOwnerProfile() {
               class="block text-grey-darker text-sm font-bold mb-2"
               for="username"
             >
-              Stalls
+              Duration
             </label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
               id="username"
               type="text"
-              placeholder="Stalls"
+              placeholder="0 days"
             />
-          </div>
-          <div class="mb-6">
-            <label
-              class="block text-grey-darker text-sm font-bold mb-2"
-              for="password"
-            >
-              Yokoaccount
-            </label>
-            <input
-              class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-              id="password"
-              type="password"
-              placeholder="00000000000"
-            />
-          </div>
-          <div class="flex items-center justify-between">
-            <button
-              class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded"
-              type="button"
-            >
-              Done
-            </button>
           </div>
         </div>
       </div>
@@ -93,4 +72,4 @@ function MarketOwnerProfile() {
   );
 }
 
-export default MarketOwnerProfile;
+export default Booking;

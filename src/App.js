@@ -1,14 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
-import LogIn from "./components/LogIn";
-import SignUp from "./components/SignUp";
-import Landing from "./components/Landing";
+import LogIn from "./pages/LogIn";
+import SignUp from "./pages/SignUp";
+import Landing from "./pages/Landing";
 import Footer from "./components/Footer";
-import MarketView from "./components/MarketView";
-import StallView from "./components/StallView";
-import Booking from "./components/Booking";
+import MarketView from "./pages/MarketView";
+import StallView from "./pages/StallView";
+import Booking from "./pages/Booking";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -31,13 +30,13 @@ function App() {
           <StallView />
         </Route>
         <Route path="/booking" exact>
-          <Booking/>
+          <Booking />
         </Route>
         <Route path="/MarketOwner" exact>
-          <Booking/>
+          <Booking />
         </Route>
         <Route path="/ProductOwner" exact>
-          <Booking/>
+          <Booking />
         </Route>
       </Switch>
       <Footer />

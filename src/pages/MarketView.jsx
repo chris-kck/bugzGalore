@@ -1,10 +1,9 @@
-import logo from "./market.jpg";
+import logo from "./../assets/market.jpg";
 import React from "react";
-import Card from "./MarketCard";
-import Stall from "./Stall";
+import Card from "../components/MarketCard";
+import Stall from "../components/Stall";
 import { Link, useParams } from "react-router-dom";
-import StallView from "./StallView";
-import dbData from "../assets/db";
+import dbData from "./../assets/db";
 
 function MarketView() {
   const { marketId } = useParams();

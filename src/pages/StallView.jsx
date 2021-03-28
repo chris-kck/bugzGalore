@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "./market.jpg";
-import Card from "./MarketCard";
-import StallCard from "./StallCard";
+import logo from "./../assets/market.jpg";
+import Card from "./../components/MarketCard";
+import StallCard from "./../components/StallCard";
 import { useParams } from "react-router";
-import dbData from "../assets/db";
+import dbData from "./../assets/db";
 
 function StallView() {
   const { market, stall } = useParams();

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./market.jpg";
+import logo from "./../assets/market.jpg";
 
 function Card({ marketName, location, image, distance }) {
   return (

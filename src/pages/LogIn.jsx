@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./market.jpg";
+import logo from "./../assets/market.jpg";
 
 function LogIn() {
   return (
     <div>
       <img src={logo} />
-      
+
       <form action="">
         <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div class="mb-4">
@@ -46,7 +46,8 @@ function LogIn() {
             </button>
             <a
               class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
-              href="#">
+              href="#"
+            >
               Forgot Password?
             </a>
           </div>
@@ -65,11 +66,7 @@ function LogIn() {
         </div>
       </form>
     </div>
-    
-
-    
   );
-
 }
 
 export default LogIn;
