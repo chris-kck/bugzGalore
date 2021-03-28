@@ -3,7 +3,7 @@ import axios from "axios";
 class bugClient {
   constructor() {
     this.client = axios.create({
-      baseURL: "http://35.239.253.67:5000/",
+      baseURL: "http://35.239.253.67:5000/", // to become an environmental variable
     });
   }
 
@@ -36,7 +36,7 @@ class bugClient {
 
   async getMarkets() {
     try {
-      const result = await this.client.post(`markets`);
+      const result = await this.client.get(`markets`);
       return result;
     } catch (err) {
       console.error(err.message);
@@ -44,6 +44,6 @@ class bugClient {
   }
 }
 
-const bugClientInstance = new bugClient();
+const backendAdapter = new bugClient();
 
-export default bugClientInstance;
+export default backendAdapter;
